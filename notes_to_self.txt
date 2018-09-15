@@ -1,0 +1,100 @@
+===================
+HTML base structure
+===================
+about (sidebar)
+  profile pic
+  info (name, email, etc)
+  bio
+
+main
+  navbar
+    <ul>
+      *<li><a>
+    filter-button
+    filter-selects, filter-float
+      *select-wrapper, select
+        *<option>
+  *section (pubs or abstracts)
+    title (pubs or abstracts)
+    *publication (data-year, data-journal, etc)
+      imgwrap
+      h2 (paper name)
+      links (info, pdf)
+        <a>
+        copyright span, if needed
+      abstract <p>
+      cite
+      bibtex
+
+* indicates things that have multiplicity > 1
+
+
+==================
+JavaScript actions
+==================
+- converts ".email" class to copyable instead of anti-spam format
+- fetches ".section" elements. For each one, it gets a list of ".publication"s
+  contained in the section. It sets the publications to be in the ".collapsed"
+  state, then adds a listener to remove the state on click. It also adds a div
+  inside the publication that re-collapses on click. These close and open events
+  are counted so that the expand/collapse all element for the section can be in
+  the right state. That element itself is created in JS for each section. The
+  functions that handle the expand/collapse button state also return the new
+  onclick listener to perform the newly set action.
+- shifts the collapsed versions of the publication header images up by the
+  distance defined in the image's "data-top" attribute. It creates CSS rules on
+  the fly to target those images. Make sure the images don't shift too high, or
+  the background will show through at the bottom for smaller widths of the
+  webpage.
+- perform deferred image loading. Any img with a "data-src" attribute will have
+  the current src replaced by this new one. While the new image is being
+  downloaded, the img's parent element will be given a ".loading" class, so that
+  any desired graying-out or forced-size can be applied. Note that people with
+  no-script or something similar won't get new images. The initial image is a
+  super low-res version of the final, and has a filter blur until loaded. When
+  the new image is loaded, resolution is selected based on the image size and
+  DPI ratio. The string in "data-src" has [[ratio]]" replaced with 1x, 2x, etc.
+  and "[[##,###,etc]]" replaced with the number in pixels that best matches
+  the actual containing element.
+- enables the filter button and then fetches and populates the select elements
+  based on the "data-year" and "data-journal" attribute values. The first
+  element chooses which select box is visible as the second element. Switching
+  the choice in the first element resets the filtering, only one type can be
+  filtered at a time. If filtering is set by the URL, the filter state reflects
+  that.
+- checks for and enables a single-publication view. This is designed so that
+  deferred image loading only loads the current image. The others are fetched
+  on closing the single view. This allows direct linking to a specific paper.
+
+
+=========================
+CSS 
+=========================
+- The FontAwesome icons in the ::before for the address and email were annoying
+  hard to position in my recollection. Works fine now, but beware if anything
+  changes.
+- Mobile is the "default" and desktop layout switches in at 700px width. Mostly
+  just changes to font sizes and floating the sidebar left. Some minor
+  positioning changes for alignement purposes as well.
+- The collapsed state needs a min-height to force it to be 3em tall before the
+  new images are loaded. The temp image should be as wide as possible so that
+  the 100% width doesn't make it huge if there's no JS.
+- There's some stuff for hover none and on-demand for devices that don't really
+  support hover, especially with touch-based input. It's to make sure that the
+  "hover" that gets activated on a click/focus doesn't persist afterwards.
+- A lot of the img state stuff is replicated for the loading state so that when
+  the image is switched, it transitions smoothly from transparent, 3em to
+  visible and full height. The h2 is also always dark-on-white in the loading
+  state so that it's not invisible while loading.
+- Note that ".loading", ".transitions", and ".collapsed" only exist after
+  they're added by JS, so these can be freely changed without worrying about
+  how they'll appear if the images never load, or on images without data-src.
+- Images are positioned relative for the "data-top" offset to work as intended.
+- Copyright is positioned relative to the link itself in desktop mode, and to
+  the links container otherwise so that it takes full width on mobile.
+- sticky positioning for the navbar would be nice, but it's not supported in
+  conjunction with the floated left about area.
+- overflow-x and overflow-y can't be set to a combination of visible and
+  really anything else useful, so it requires extra nested elements to work
+- There's some default spacing around select objects that's impossible to
+  remove, even with appearance: none.
