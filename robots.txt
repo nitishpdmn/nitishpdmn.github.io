@@ -1,0 +1,8 @@
+User-agent: *
+
+Disallow: /font-awesome/
+Disallow: /pub_ims/
+Disallow: /site_ims/
+Disallow: /uploads/
+Disallow: /notes_to_self.txt
+Disallow: /googleca63f22847065e4f.html
