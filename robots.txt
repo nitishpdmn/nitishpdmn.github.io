@@ -1,8 +1,16 @@
 User-agent: *
 
-Disallow: /font-awesome/
-Disallow: /pub_ims/
-Disallow: /site_ims/
+Noindex: /font-awesome/
+Noindex: /pub_ims/
+Noindex: /site_ims/
+Noindex: /uploads/
+Noindex: /notes_to_self.txt
+Noindex: /googleca63f22847065e4f.html
 Disallow: /uploads/
 Disallow: /notes_to_self.txt
 Disallow: /googleca63f22847065e4f.html
+Allow: /pub_ims/2x/
+Allow: /site_ims/profile
+Allow: /font-awesome/css/font-awesome.min.css
+Allow: /font-awesome/fonts/
+Sitemap: https://nitish.me/sitemap.xml
