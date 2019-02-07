@@ -129,7 +129,37 @@ h2 {
 	text-decoration: none;
 	margin: -2px 0.6em -2px -2px;
 	padding: 2px;
+	font-size: 115%;
 	position: relative;
+	text-rendering:auto;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+.external a.acicons {
+	font-family: "Academicons";
+}
+
+.external a.orcid {
+	color: #a6ce39;
+}
+
+.external a.orcid::before {
+	z-index: 1;
+	position: relative;
+}
+
+.external a.orcid::after {
+	content: "";
+	position: absolute;
+	background-color: white;
+	display: block;
+	width: 0.75em;
+	height: 0.75em;
+	top: 4px;
+	left: 4px;
+	z-index: 0;
+	border-radius: 100%;
 }
 
 .external a:hover {
