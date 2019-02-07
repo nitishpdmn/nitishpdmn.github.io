@@ -129,7 +129,12 @@ h2 {
 	text-decoration: none;
 	margin: -2px 0.6em -2px -2px;
 	padding: 2px;
-	font-size: 115%;
+	border-radius: 4px;
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	line-height: 1.1em;
+	text-align: center;
 	position: relative;
 	text-rendering:auto;
 	-webkit-font-smoothing:antialiased;
@@ -140,26 +145,27 @@ h2 {
 	font-family: "Academicons";
 }
 
+.external a.gscholar {
+	color: white;
+	background-color: #4688f1;
+}
+
+.external a.linkedin {
+	color: white;
+	background-color: #1178b3;
+}
+
 .external a.orcid {
 	color: #a6ce39;
+	background-color: white;
 }
 
 .external a.orcid::before {
-	z-index: 1;
+	font-size: 125%;
+	line-height: 0;
+	margin: -1em;
 	position: relative;
-}
-
-.external a.orcid::after {
-	content: "";
-	position: absolute;
-	background-color: white;
-	display: block;
-	width: 0.75em;
-	height: 0.75em;
-	top: 4px;
-	left: 4px;
-	z-index: 0;
-	border-radius: 100%;
+	top: 0.05em;
 }
 
 .external a:hover {
