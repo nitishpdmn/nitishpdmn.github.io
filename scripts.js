@@ -338,7 +338,7 @@ scripts = function() {
 	// set of filter functions
 	ths.filterYear = function(year, elems) {
 		for (var i = elems.length - 1; i >= 0; i--) {
-			if (elems[i].getAttribute("data-year") != year) {
+			if (!elems[i].getAttribute("data-year").includes(year)) {
 				elems[i].classList.add("filtered-out");
 				elems[i].classList.remove("filter-open");
 			}
@@ -474,15 +474,19 @@ scripts = function() {
 		ths.filterChooser.appendChild(opt);
 
 		for (var i = filterables.length - 1; i >= 0; i--) {
-			var newVal = filterables[i].getAttribute(attrName);
-			if (targetList.indexOf(newVal) == -1) {
-				targetList.push(newVal);
+			var newValList = filterables[i].getAttribute(attrName).split(',');
+			for (var j = newValList.length - 1; j >= 0; j--) {
+				var newVal = newValList[j];
 
-				// category for "nested" filters
-				if (newVal.indexOf("(") > -1) {
-					var valCategory = newVal.split("(")[0].trim();
-					if (targetList.indexOf(valCategory) == -1) {
-						targetList.push(valCategory);
+				if (targetList.indexOf(newVal) == -1) {
+					targetList.push(newVal);
+
+					// category for "nested" filters
+					if (newVal.indexOf("(") > -1) {
+						var valCategory = newVal.split("(")[0].trim();
+						if (targetList.indexOf(valCategory) == -1) {
+							targetList.push(valCategory);
+						}
 					}
 				}
 			}
