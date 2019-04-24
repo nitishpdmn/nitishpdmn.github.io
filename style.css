@@ -862,6 +862,14 @@ screen and (min-width: 520px) and (max-width: 699px) {
 		opacity: 1;
 	}
 
+	.publication .imgwrap[data-bg="light"] .closepub::before {
+		color: #333333;
+	}
+
+	.publication .imgwrap[data-bg="light"] .closepub:hover::before {
+		color: #fafafa;
+	}
+
 	.collapsed.publication::before {
 		opacity: 0;
 	}
@@ -876,6 +884,9 @@ screen and (min-width: 520px) and (max-width: 699px) {
 		.collapsed.publication:hover::before {
 			background: #000000;
 			opacity: .5;
+		}
+		.publication .imgwrap[data-bg="light"] .closepub::before {
+			color: #fafafa;
 		}
 	}
 }

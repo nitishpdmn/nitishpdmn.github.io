@@ -20,6 +20,7 @@ scripts = function() {
 		} else {
 			ths.resourceRatio = 2;
 		}
+		ths.roundedRatio = ths.resourceRatio;
 		ths.resourceRatio = ths.resourceRatio + "x";
 
 		/// convert email to better format
@@ -111,6 +112,35 @@ scripts = function() {
 			}
 		}
 		document.getElementsByTagName("head")[0].appendChild(cssGen);
+
+		/// check image corner background for closepub icon color
+		for (i = imgwraps.length - 1; i >= 0; i--) {
+			imgwraps[i].firstChild.addEventListener("load", function (evt) {
+				let img = evt.target;
+
+				// number of pixels from corner to average
+				let averageRegion = 40;
+
+				// create canvas
+				let cvs = document.createElement("canvas");
+				cvs.width = 1;
+				cvs.height = 1;
+				let ctx = cvs.getContext("2d");
+
+				// draw image that would be below the icon into a 1x1,
+				// allowing the browser to average pixels for us
+				ctx.drawImage(img, 0, 0, averageRegion * ths.roundedRatio,
+					averageRegion * ths.roundedRatio, 0, 0, 1, 1);
+				// get the averaged pixel value
+				let pxVal = ctx.getImageData(0, 0, 1, 1);
+
+				// light background detected
+				let lightness = (pxVal.data[0] + pxVal.data[1] + pxVal.data[2]) / 3;
+				if (lightness > 127) {
+					img.parentElement.setAttribute("data-bg", "light");	
+				}
+			});
+		}
 
 		/// add transition tag to talks
 		var talks = document.getElementsByClassName("talk");
