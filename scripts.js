@@ -151,9 +151,9 @@ scripts = function() {
 		/// filtering options and single view options
 		var singleArticle = false;
 		if (window.location.hash.length > 1 && window.location.hash != '#?') {
-			// prevent anchor on first load
-			window.scrollTo(0, 0);  // fallback
-			document.getElementsByClassName("main")[0].scrollIntoView();
+			// prevent anchor on first load (not necessary due to singleView)
+			// window.scrollTo(0, 0);  // fallback
+			// document.getElementsByClassName("main")[0].scrollIntoView();
 
 			if (window.location.hash[1] == "?") {
 				ths.filterParser(window.location.hash.substring(2));
@@ -321,12 +321,18 @@ scripts = function() {
 		var selected = document.getElementById("_" + singleId);
 		if (selected) {
 			singleArticle = true;
+
+			// scroll to top for single article view
+			window.scrollTo(0, 0);  // fallback
+			document.getElementsByClassName("main")[0].scrollIntoView();
+
 			selected.classList.remove("collapsed");
 			selected.classList.add("selected");
 			var main = document.getElementsByClassName("main")[0];
 			main.classList.add("single");
 			var closepub = selected.getElementsByClassName("closepub")[0];
 
+			// load just images for selected publication
 			var imgs = selected.getElementsByTagName("img");
 			var delayedIms = [];
 			for (var i = imgs.length - 1; i >= 0; i--) {
