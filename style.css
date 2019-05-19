@@ -58,6 +58,12 @@ a:hover {
 
 .about img {
 	width: 100%;
+	max-width: 420px;
+}
+@media screen and (min-width: 520px) and (max-width: 699px) {
+	.about img {
+		margin-left: calc(50% - 210px);
+	}
 }
 
 h1, h2 {
@@ -153,6 +159,11 @@ h2 {
 .external a.linkedin {
 	color: white;
 	background-color: #1178b3;
+}
+
+.external a.cv {
+	color: white;
+	background-color: #8c1515;
 }
 
 .external a.orcid {
