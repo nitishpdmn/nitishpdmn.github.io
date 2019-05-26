@@ -346,6 +346,7 @@ h2 {
 		left: 0;
 		height: 1px;
 		width: 100%;
+		pointer-events: none;
 		background: #a0a0a0;
 		-webkit-transition: width 250ms ease, left 250ms ease, top 250ms ease;
 		-moz-transition: width 250ms ease, left 250ms ease, top 250ms ease;

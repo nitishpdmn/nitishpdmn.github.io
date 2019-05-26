@@ -647,7 +647,7 @@ scripts = function() {
 	};
 
 	ths.addDynamicBorderTargets = function() {
-		var targets = ths.navbar.querySelectorAll("a, .filter-button");
+		var targets = ths.navbar.querySelectorAll("a, .filter-button, .select-wrapper");
 		for (var i = targets.length - 1; i >= 0; i--) {
 			targets[i].addEventListener("mouseenter", function(evt) {
 				ths.navBorder.classList.add("active");
