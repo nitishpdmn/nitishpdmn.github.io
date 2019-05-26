@@ -182,15 +182,9 @@ h2 {
 .external a:hover {
 	top: -1px;
 }
-.collapsed.publication:hover {
-	background: rgba(0, 0, 0, 0.05);
-}
 @media (hover:none), (hover:on-demand) {
 	.external a:hover {
 		top: 0;
-	}
-	.collapsed.publication:hover {
-		background: inherit;
 	}
 }
 
@@ -263,6 +257,33 @@ h2 {
 	margin: 0 2vw;
 }
 
+.navbar li a, .navbar .filter-button {
+	position: relative;
+}
+
+.navbar li a::before,
+.navbar .filter-button div,
+.collapsed.publication::before {
+	content: "";
+    display: block;
+    width: 100%;
+    height: 0%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.05);
+	-webkit-transition: height 250ms ease, transform 250ms ease;
+	-moz-transition: height 250ms ease, transform 250ms ease;
+	-ms-transition: height 250ms ease, transform 250ms ease;
+	-o-transition: height 250ms ease, transform 250ms ease;
+	transition: height 250ms ease, transform 250ms ease;
+}
+
+.collapsed.publication::before {
+	bottom: 0;
+	top: auto;
+}
+
 .navbar li a:link, .navbar li a:visited {
 	text-decoration: none;
 	color: #707070;
@@ -271,7 +292,7 @@ h2 {
 	padding: 0 1em;
 }
 
-.navbar li a:link, .navbar li a:visited, .navbar .filter-button {
+.navbar li a, .navbar .filter-button {
 	-webkit-transition: color 250ms linear, background 250ms linear;
 	-moz-transition: color 250ms linear, background 250ms linear;
 	-ms-transition: color 250ms linear, background 250ms linear;
@@ -281,23 +302,33 @@ h2 {
 
 .navbar li a:hover, .navbar .filter-button:hover {
 	color: #333333;
-	background: #f0f0f0;
+}
+.navbar li a:hover::before,
+.navbar .filter-button:hover div {
+	height: 100%;
+	bottom: 0;
+	top: auto;
+}
+.collapsed.publication:hover::before {
+	height: 100%;
+	top: 0;
 }
 @media (hover:none), (hover:on-demand) {
 	.navbar li a:hover, .navbar .filter-button:hover {
 		color: #707070;
 	}
 
-	.navbar .filter-button:hover {
-		background: transparent;
+	.navbar .filter-button:hover div,
+	.collapsed.publication:hover::before {
+		height: 0%;
 	}
 
-	.navbar li a, .navbar li a:hover {
-		background: #f0f0f0;
+	.navbar li a::before, .navbar li a:hover::before {
+		height: 100%;
 	}
 	@media screen and (min-width: 700px) {
-		.navbar li a, .navbar li a:hover {
-			background: transparent;
+		.navbar li a::before, .navbar li a:hover::before {
+			height: 0%;
 		}	
 	}
 }
@@ -475,6 +506,7 @@ h2 {
 
 .publication div.imgwrap {
 	padding: 0;
+	position: relative;
 }
 
 .publication h2 {
@@ -779,7 +811,7 @@ screen and (min-width: 520px) and (max-width: 699px) {
 	transition: all 250ms ease, max-width 75ms 100ms ease-out, max-height 100ms ease-in;
 }
 
-.publication .closepub, .collapsed.publication::before {
+.publication .closepub, .collapsed.publication .imgwrap::before {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -791,7 +823,7 @@ screen and (min-width: 520px) and (max-width: 699px) {
 	z-index: 2;
 }
 
-.publication .closepub::before, .collapsed.publication::before {
+.publication .closepub::before, .collapsed.publication .imgwrap::before {
 	font-family: "FontAwesome";
 	font-size: 1.5em;
 	background: #000000;
@@ -813,10 +845,10 @@ screen and (min-width: 520px) and (max-width: 699px) {
 	margin: 0;
 }
 
-.collapsed.publication::before {
+.collapsed.publication .imgwrap::before {
 	content: "\f065";
 	padding: 9.6px;
-	width: 80.8px;
+	width: 100%;
 	-webkit-transition: opacity 250ms linear;
 	-moz-transition: opacity 250ms linear;
 	-ms-transition: opacity 250ms linear;
@@ -825,7 +857,7 @@ screen and (min-width: 520px) and (max-width: 699px) {
 }
 
 .publication .closepub:hover::before,
-.collapsed.publication:hover::before {
+.collapsed.publication:hover .imgwrap::before {
 	background: #000000;
 	opacity: 1;
 }
@@ -855,7 +887,7 @@ screen and (min-width: 520px) and (max-width: 699px) {
 }
 @media (hover:none), (hover:on-demand) {
 	.publication .closepub:hover::before,
-	.collapsed.publication:hover::before {
+	.collapsed.publication:hover .imgwrap::before {
 		opacity: .5;
 	}
 	.publication .imgwrap:hover img {
@@ -881,30 +913,24 @@ screen and (min-width: 520px) and (max-width: 699px) {
 		color: #fafafa;
 	}
 
-	.collapsed.publication::before {
+	.collapsed.publication .imgwrap::before {
 		opacity: 0;
 	}
 
 	@media (hover:none), (hover:on-demand) {
 		.publication .closepub::before,
-		.collapsed.publication::before {
+		.collapsed.publication .imgwrap::before {
 			background: #000000;
 			opacity: .5;
 		}
 		.publication .closepub:hover::before,
-		.collapsed.publication:hover::before {
+		.collapsed.publication:hover .imgwrap::before {
 			background: #000000;
 			opacity: .5;
 		}
 		.publication .imgwrap[data-bg="light"] .closepub::before {
 			color: #fafafa;
 		}
-	}
-}
-@media screen and (min-width: 820px),
-screen and (min-width: 520px) and (max-width: 699px) {
-	.collapsed.publication::before {
-		width: 180.9px;
 	}
 }
 
