@@ -47,6 +47,12 @@ scripts = function() {
 		ths.initializeFilter("data-year", "Year", true);
 		ths.initializeFilter("data-journal", "Journal/Conference");
 
+		// add element for dynamic border
+		ths.navBorder = document.createElement("div");
+		ths.navBorder.className = "dynamic-border";
+		ths.navbar.appendChild(ths.navBorder);
+		ths.addDynamicBorderTargets();
+
 		/// make the open/close functions, per section
 		var sections = document.getElementsByClassName("section");
 		ths.secExpander.length = sections.length;
@@ -637,6 +643,25 @@ scripts = function() {
 			}
 
 			ths.filterParser(urlSplit[1].substring(1));
+		}
+	};
+
+	ths.addDynamicBorderTargets = function() {
+		var targets = ths.navbar.querySelectorAll("a, .filter-button");
+		for (var i = targets.length - 1; i >= 0; i--) {
+			targets[i].addEventListener("mouseenter", function(evt) {
+				ths.navBorder.classList.add("active");
+				ths.navBorder.style.left = evt.target.offsetLeft + "px";
+				ths.navBorder.style.top = (evt.target.offsetTop
+					+ evt.target.offsetHeight - ths.navBorder.offsetHeight) + "px";
+				ths.navBorder.style.width = evt.target.offsetWidth + "px";
+			});
+			targets[i].addEventListener("mouseleave", function(evt) {
+				ths.navBorder.classList.remove("active");
+				ths.navBorder.style.left = "";
+				ths.navBorder.style.top = "";
+				ths.navBorder.style.width = "";
+			});
 		}
 	};
 

@@ -333,6 +333,33 @@ h2 {
 	}
 }
 
+@media (hover:hover) {
+	.navbar.transitions {
+		border: none;
+		padding-bottom: 1px;
+		position: relative;
+	}
+
+	.navbar.transitions .dynamic-border {
+		position: absolute;
+		top: calc(100% - 1px);
+		left: 0;
+		height: 1px;
+		width: 100%;
+		background: #a0a0a0;
+		-webkit-transition: width 250ms ease, left 250ms ease, top 250ms ease;
+		-moz-transition: width 250ms ease, left 250ms ease, top 250ms ease;
+		-ms-transition: width 250ms ease, left 250ms ease, top 250ms ease;
+		-o-transition: width 250ms ease, left 250ms ease, top 250ms ease;
+		transition: width 250ms ease, left 250ms ease, top 250ms ease;
+	}
+
+	.navbar.transitions .dynamic-border.active {
+		background: #333333;
+		height: 2px;
+	}
+}
+
 .navbar .disabled {
 	display: none;  /* hidden unless js enabled */
 }
