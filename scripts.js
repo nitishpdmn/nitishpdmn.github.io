@@ -650,11 +650,16 @@ scripts = function() {
 		var targets = ths.navbar.querySelectorAll("a, .filter-button, .select-wrapper");
 		for (var i = targets.length - 1; i >= 0; i--) {
 			targets[i].addEventListener("mouseenter", function(evt) {
+				let navbarBox = ths.navbar.getBoundingClientRect();
+				let navBorderBox = ths.navBorder.getBoundingClientRect();
+				let targetBox = evt.target.getBoundingClientRect();
+
 				ths.navBorder.classList.add("active");
-				ths.navBorder.style.left = evt.target.offsetLeft + "px";
-				ths.navBorder.style.top = (evt.target.offsetTop
-					+ evt.target.offsetHeight - ths.navBorder.offsetHeight) + "px";
-				ths.navBorder.style.width = evt.target.offsetWidth + "px";
+				ths.navBorder.style.left = (targetBox.left
+					- navbarBox.left) + "px";
+				ths.navBorder.style.top = (targetBox.top - navbarBox.top
+					+ targetBox.height - navBorderBox.height) + "px";
+				ths.navBorder.style.width = targetBox.width + "px";
 			});
 			targets[i].addEventListener("mouseleave", function(evt) {
 				ths.navBorder.classList.remove("active");
