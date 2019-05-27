@@ -44,8 +44,7 @@ JavaScript actions
   functions that handle the expand/collapse button state also return the new
   onclick listener to perform the newly set action.
 - shifts the collapsed versions of the publication header images left by the
-  distance defined in the image's "data-left" attribute. It creates CSS rules on
-  the fly to target those images.
+  distance defined in the image's "data-left" attribute. It creates CSS rules on the fly to target those images.
 - perform deferred image loading. Any img with a "data-src" attribute will have
   the current src replaced by this new one. While the new image is being
   downloaded, the img's parent element will be given a ".loading" class, so that
@@ -65,6 +64,9 @@ JavaScript actions
 - checks for and enables a single-publication view. This is designed so that
   deferred image loading only loads the current image. The others are fetched
   on closing the single view. This allows direct linking to a specific paper.
+- calculates position and width of the dynamic border of the navbar. 
+  offsetWidth, offsetHeight, etc. only support integer offsets, so
+  getBoundingClientRect is better for this
 
 
 =========================
@@ -91,4 +93,8 @@ CSS
   really anything else useful, so it requires extra nested elements to work (I
   forget, but I think it's for the .expandsec disappearing during filtering)
 - There's some default spacing around select objects that's impossible to
-  remove, even with appearance: none.
+  remove, even with appearance: none. This seems to be caused by the line break in the html, but we're probably stuck with it for the auto-generated
+  dropdowns. The navbar elements also have this spacing, but that could be
+  fixed since it's html-only.
+- The dynamic border doesn't transition height because it seems to flicker if 
+  it is transitioned. Probably because it's only a single pixel change
