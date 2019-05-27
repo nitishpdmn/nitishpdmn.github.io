@@ -269,7 +269,7 @@ h2 {
     width: 100%;
     height: 0%;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.05);
 	-webkit-transition: height 250ms ease, transform 250ms ease;
@@ -280,8 +280,13 @@ h2 {
 }
 
 .collapsed.publication::before {
-	bottom: 0;
-	top: auto;
+    width: 0%;
+    height: 100%;
+	-webkit-transition: width 250ms ease-in, transform 250ms ease;
+	-moz-transition: width 250ms ease-in, transform 250ms ease;
+	-ms-transition: width 250ms ease-in, transform 250ms ease;
+	-o-transition: width 250ms ease-in, transform 250ms ease;
+	transition: width 250ms ease-in, transform 250ms ease;
 }
 
 .navbar li a:link, .navbar li a:visited {
@@ -306,21 +311,25 @@ h2 {
 .navbar li a:hover::before,
 .navbar .filter-button:hover div {
 	height: 100%;
-	bottom: 0;
-	top: auto;
 }
 .collapsed.publication:hover::before {
-	height: 100%;
-	top: 0;
+	width: 100%;
+	-webkit-transition: width 300ms ease-out, transform 250ms ease;
+	-moz-transition: width 300ms ease-out, transform 250ms ease;
+	-ms-transition: width 300ms ease-out, transform 250ms ease;
+	-o-transition: width 300ms ease-out, transform 250ms ease;
+	transition: width 300ms ease-out, transform 250ms ease;
 }
 @media (hover:none), (hover:on-demand) {
 	.navbar li a:hover, .navbar .filter-button:hover {
 		color: #707070;
 	}
 
-	.navbar .filter-button:hover div,
-	.collapsed.publication:hover::before {
+	.navbar .filter-button:hover div {
 		height: 0%;
+	}
+	.collapsed.publication:hover::before {
+		width: 0%;
 	}
 
 	.navbar li a::before, .navbar li a:hover::before {
@@ -348,11 +357,11 @@ h2 {
 		width: 100%;
 		pointer-events: none;
 		background: #a0a0a0;
-		-webkit-transition: width 250ms ease, left 250ms ease, top 250ms ease;
-		-moz-transition: width 250ms ease, left 250ms ease, top 250ms ease;
-		-ms-transition: width 250ms ease, left 250ms ease, top 250ms ease;
-		-o-transition: width 250ms ease, left 250ms ease, top 250ms ease;
-		transition: width 250ms ease, left 250ms ease, top 250ms ease;
+		-webkit-transition: width 250ms ease, left 250ms ease, top 250ms ease, background 250ms linear;
+		-moz-transition: width 250ms ease, left 250ms ease, top 250ms ease, background 250ms linear;
+		-ms-transition: width 250ms ease, left 250ms ease, top 250ms ease, background 250ms linear;
+		-o-transition: width 250ms ease, left 250ms ease, top 250ms ease, background 250ms linear;
+		transition: width 250ms ease, left 250ms ease, top 250ms ease, background 250ms linear;
 	}
 
 	.navbar.transitions .dynamic-border.active {
