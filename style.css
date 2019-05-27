@@ -1026,6 +1026,11 @@ screen and (min-width: 520px) and (max-width: 699px) {
 	-ms-transition: all 250ms ease;
 	-o-transition: all 250ms ease;
 	transition: all 250ms ease;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 @media screen and (min-width: 700px) {
 	.section .expandsec {
