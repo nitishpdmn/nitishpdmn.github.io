@@ -96,5 +96,5 @@ CSS
   remove, even with appearance: none. This seems to be caused by the line break in the html, but we're probably stuck with it for the auto-generated
   dropdowns. The navbar elements also have this spacing, but that could be
   fixed since it's html-only.
-- The dynamic border doesn't transition height because it seems to flicker if 
-  it is transitioned. Probably because it's only a single pixel change
+- Line height turns out not to be a good way to set height for centered
+  objects when page zoom is changed, unless also paired with a height

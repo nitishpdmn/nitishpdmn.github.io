@@ -215,7 +215,7 @@ h2 {
 	margin-top: 5px;
 	overflow: hidden;
 	text-align: center;
-	max-height: 100px;
+	max-height: 101px;
 /*	position: sticky;
 	top: 0;
 	z-index: 10;*/
@@ -237,6 +237,7 @@ h2 {
 	line-height: 47px;
 	width: 100%;
 	text-align: center;
+	height: 48px;
 }
 
 .navbar .filter-button::before {
@@ -294,6 +295,7 @@ h2 {
 	color: #707070;
 	display: block;
 	line-height: 48px;
+	height: 48px;
 	padding: 0 1em;
 }
 
@@ -357,11 +359,11 @@ h2 {
 		width: 100%;
 		pointer-events: none;
 		background: #a0a0a0;
-		-webkit-transition: width 250ms ease, left 250ms ease, top 250ms ease, background 250ms linear;
-		-moz-transition: width 250ms ease, left 250ms ease, top 250ms ease, background 250ms linear;
-		-ms-transition: width 250ms ease, left 250ms ease, top 250ms ease, background 250ms linear;
-		-o-transition: width 250ms ease, left 250ms ease, top 250ms ease, background 250ms linear;
-		transition: width 250ms ease, left 250ms ease, top 250ms ease, background 250ms linear;
+		-webkit-transition: width 250ms ease, left 250ms ease, top 250ms ease, height 250ms ease, background 250ms linear;
+		-moz-transition: width 250ms ease, left 250ms ease, top 250ms ease, height 250ms ease, background 250ms linear;
+		-ms-transition: width 250ms ease, left 250ms ease, top 250ms ease, height 250ms ease, background 250ms linear;
+		-o-transition: width 250ms ease, left 250ms ease, top 250ms ease, height 250ms ease, background 250ms linear;
+		transition: width 250ms ease, left 250ms ease, top 250ms ease, height 250ms ease, background 250ms linear;
 	}
 
 	.navbar.transitions .dynamic-border.active {
@@ -380,11 +382,24 @@ h2 {
 }
 
 .main>.navbar.filters-active {
-	max-height: 148px;
+	max-height: 151px;
 }
 
 .navbar .filter-selects {
+	-webkit-transition: background 0ms linear 250ms;
+	-moz-transition: background 0ms linear 250ms;
+	-ms-transition: background 0ms linear 250ms;
+	-o-transition: background 0ms linear 250ms;
+	transition: background 0ms linear 250ms;
+}
+
+.navbar.filters-active .filter-selects {
 	background: #ededed;
+	-webkit-transition: background 0ms linear;
+	-moz-transition: background 0ms linear;
+	-ms-transition: background 0ms linear;
+	-o-transition: background 0ms linear;
+	transition: background 0ms linear;
 }
 
 .navbar select {
@@ -431,14 +446,14 @@ h2 {
 
 .navbar .filter-float {
 	text-align: center;
-	padding-bottom: 5px;
+	padding: 5px 0;
 }
 
 @media screen and (min-width: 700px) {
 	.navbar {
 		margin: 0;
 		text-align: left;
-		max-height: 3em;
+		max-height: 48px;
 	}
 
 	.navbar li, .navbar ul {
@@ -451,7 +466,7 @@ h2 {
 	}
 
 	.main>.navbar.filters-active {
-		max-height: 7em;
+		max-height: 100px;
 	}
 
 	.navbar .filter-selects {
@@ -484,10 +499,12 @@ h2 {
 	   screen and (max-width: 380px) {
 	.navbar {
 		font-size: 0.8em;
+		max-height: 38px;
 	}
 
 	.navbar .filter-button, .navbar li a:link, .navbar li a:visited {
 		line-height: 38px;
+		height: 38px;
 	}
 
 	.navbar select {
@@ -499,6 +516,10 @@ h2 {
 		line-height: 30px;
 		right: 7px;
 	}
+
+	.main>.navbar.filters-active {
+		max-height: 80px;
+	}
 }
 
 @media screen and (max-width: 380px) {
@@ -507,7 +528,7 @@ h2 {
 	}
 
 	.main>.navbar.filters-active {
-		max-height: 119px;
+		max-height: 121px;
 	}
 }
 
