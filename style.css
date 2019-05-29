@@ -39,10 +39,6 @@ p {
 
 a:link, a:visited {
 	color: #8c1515;
-	-webkit-transition: color 250ms linear;
-	-moz-transition: color 250ms linear;
-	-ms-transition: color 250ms linear;
-	-o-transition: color 250ms linear;
 	transition: color 250ms linear;
 }
 
@@ -273,21 +269,15 @@ h2 {
     bottom: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.05);
-	-webkit-transition: height 250ms ease, transform 250ms ease;
-	-moz-transition: height 250ms ease, transform 250ms ease;
-	-ms-transition: height 250ms ease, transform 250ms ease;
-	-o-transition: height 250ms ease, transform 250ms ease;
-	transition: height 250ms ease, transform 250ms ease;
+	transition: height 250ms ease,
+	            transform 250ms ease;
 }
 
 .collapsed.publication::before {
     width: 0%;
     height: 100%;
-	-webkit-transition: width 250ms ease-in, transform 250ms ease;
-	-moz-transition: width 250ms ease-in, transform 250ms ease;
-	-ms-transition: width 250ms ease-in, transform 250ms ease;
-	-o-transition: width 250ms ease-in, transform 250ms ease;
-	transition: width 250ms ease-in, transform 250ms ease;
+	transition: width 250ms ease-in,
+	            transform 250ms ease;
 }
 
 .navbar li a:link, .navbar li a:visited {
@@ -300,11 +290,8 @@ h2 {
 }
 
 .navbar li a, .navbar .filter-button {
-	-webkit-transition: color 250ms linear, background 250ms linear;
-	-moz-transition: color 250ms linear, background 250ms linear;
-	-ms-transition: color 250ms linear, background 250ms linear;
-	-o-transition: color 250ms linear, background 250ms linear;
-	transition: color 250ms linear, background 250ms linear;
+	transition: color 250ms linear,
+	            background 250ms linear;
 }
 
 .navbar li a:hover, .navbar .filter-button:hover {
@@ -316,11 +303,8 @@ h2 {
 }
 .collapsed.publication:hover::before {
 	width: 100%;
-	-webkit-transition: width 300ms ease-out, transform 250ms ease;
-	-moz-transition: width 300ms ease-out, transform 250ms ease;
-	-ms-transition: width 300ms ease-out, transform 250ms ease;
-	-o-transition: width 300ms ease-out, transform 250ms ease;
-	transition: width 300ms ease-out, transform 250ms ease;
+	transition: width 300ms ease-out,
+	            transform 250ms ease;
 }
 @media (hover:none), (hover:on-demand) {
 	.navbar li a:hover, .navbar .filter-button:hover {
@@ -359,11 +343,11 @@ h2 {
 		width: 100%;
 		pointer-events: none;
 		background: #a0a0a0;
-		-webkit-transition: width 250ms ease, left 250ms ease, top 250ms ease, height 250ms ease, background 250ms linear;
-		-moz-transition: width 250ms ease, left 250ms ease, top 250ms ease, height 250ms ease, background 250ms linear;
-		-ms-transition: width 250ms ease, left 250ms ease, top 250ms ease, height 250ms ease, background 250ms linear;
-		-o-transition: width 250ms ease, left 250ms ease, top 250ms ease, height 250ms ease, background 250ms linear;
-		transition: width 250ms ease, left 250ms ease, top 250ms ease, height 250ms ease, background 250ms linear;
+		transition: width 250ms ease,
+		            height 250ms ease,
+		            left 250ms ease,
+		            top 250ms ease,
+		            background 250ms linear;
 	}
 
 	.navbar.transitions .dynamic-border.active {
@@ -386,19 +370,11 @@ h2 {
 }
 
 .navbar .filter-selects {
-	-webkit-transition: background 0ms linear 250ms;
-	-moz-transition: background 0ms linear 250ms;
-	-ms-transition: background 0ms linear 250ms;
-	-o-transition: background 0ms linear 250ms;
 	transition: background 0ms linear 250ms;
 }
 
 .navbar.filters-active .filter-selects {
 	background: #ededed;
-	-webkit-transition: background 0ms linear;
-	-moz-transition: background 0ms linear;
-	-ms-transition: background 0ms linear;
-	-o-transition: background 0ms linear;
 	transition: background 0ms linear;
 }
 
@@ -542,19 +518,13 @@ h2 {
 .publication.transitions,
 .talk.transitions {
 	max-height: 9999px;
-	-webkit-transition: max-height 250ms cubic-bezier(.99,.01,.99,.01);
-	-moz-transition: max-height 250ms cubic-bezier(.99,.01,.99,.01);
-	-ms-transition: max-height 250ms cubic-bezier(.99,.01,.99,.01);
-	-o-transition: max-height 250ms cubic-bezier(.99,.01,.99,.01);
 	transition: max-height 250ms cubic-bezier(.99,.01,.99,.01);
 }
 
 .publication.transitions.collapsed.filter-open {
-	-webkit-transition: max-height 250ms ease-out, min-height 250ms ease-out, background 250ms linear;
-	-moz-transition: max-height 250ms ease-out, min-height 250ms ease-out, background 250ms linear;
-	-ms-transition: max-height 250ms ease-out, min-height 250ms ease-out, background 250ms linear;
-	-o-transition: max-height 250ms ease-out, min-height 250ms ease-out, background 250ms linear;
-	transition: max-height 250ms ease-out, min-height 250ms ease-out, background 250ms linear;
+	transition: max-height 250ms ease-out,
+	            min-height 250ms ease-out,
+	            background 250ms linear;
 }
 
 .publication h2, .publication>p, .publication div {
@@ -582,10 +552,6 @@ h2>span {
 	font-family: "FontAwesome";
 	color: #8c1515;
 	opacity: 0;
-	-webkit-transition: opacity 250ms linear;
-	-moz-transition: opacity 250ms linear;
-	-ms-transition: opacity 250ms linear;
-	-o-transition: opacity 250ms linear;
 	transition: opacity 250ms linear;
 }
 
@@ -714,11 +680,8 @@ h2>a {
 .transitions.publication.collapsed,
 .transitions.publication.filtered-out,
 .transitions.talk.filtered-out {
-	-webkit-transition: max-height 250ms cubic-bezier(.01,.99,.01,.99), background 250ms linear;
-	-moz-transition: max-height 250ms cubic-bezier(.01,.99,.01,.99), background 250ms linear;
-	-ms-transition: max-height 250ms cubic-bezier(.01,.99,.01,.99), background 250ms linear;
-	-o-transition: max-height 250ms cubic-bezier(.01,.99,.01,.99), background 250ms linear;
-	transition: max-height 250ms cubic-bezier(.01,.99,.01,.99), background 250ms linear;
+	transition: max-height 250ms cubic-bezier(.01,.99,.01,.99),
+	            background 250ms linear;
 }
 
 .publication.collapsed {
@@ -844,29 +807,21 @@ screen and (min-width: 520px) and (max-width: 699px) {
 
 .transitions h2,
 .transitions.publication>p {
-	-webkit-transition: all 250ms ease;
-	-moz-transition: all 250ms ease;
-	-ms-transition: all 250ms ease;
-	-o-transition: all 250ms ease;
 	transition: all 250ms ease;
 }
 
 .transitions .imgwrap,
 .transitions .imgwrap img {
-	-webkit-transition: all 250ms ease, max-width 75ms ease-in, max-height 150ms 75ms ease;
-	-moz-transition: all 250ms ease, max-width 75ms ease-in, max-height 150ms 75ms ease;
-	-ms-transition: all 250ms ease, max-width 75ms ease-in, max-height 150ms 75ms ease;
-	-o-transition: all 250ms ease, max-width 75ms ease-in, max-height 150ms 75ms ease;
-	transition: all 250ms ease, max-width 75ms ease-in, max-height 150ms 75ms ease;
+	transition: all 250ms ease,
+	            max-width 75ms ease-in,
+	            max-height 150ms ease 75ms;
 }
 
 .collapsed.transitions .imgwrap,
 .collapsed.transitions .imgwrap img {
-	-webkit-transition: all 250ms ease, max-width 75ms 100ms ease-out, max-height 100ms ease-in;
-	-moz-transition: all 250ms ease, max-width 75ms 100ms ease-out, max-height 100ms ease-in;
-	-ms-transition: all 250ms ease, max-width 75ms 100ms ease-out, max-height 100ms ease-in;
-	-o-transition: all 250ms ease, max-width 75ms 100ms ease-out, max-height 100ms ease-in;
-	transition: all 250ms ease, max-width 75ms 100ms ease-out, max-height 100ms ease-in;
+	transition: all 250ms ease,
+	            max-width 75ms ease-out 100ms,
+	            max-height 100ms ease-in;
 }
 
 .publication .closepub, .collapsed.publication .imgwrap::before {
@@ -907,10 +862,6 @@ screen and (min-width: 520px) and (max-width: 699px) {
 	content: "\f065";
 	padding: 9.6px;
 	width: 100%;
-	-webkit-transition: opacity 250ms linear;
-	-moz-transition: opacity 250ms linear;
-	-ms-transition: opacity 250ms linear;
-	-o-transition: opacity 250ms linear;
 	transition: opacity 250ms linear;
 }
 
@@ -1000,10 +951,6 @@ screen and (min-width: 520px) and (max-width: 699px) {
 
 .transitions.publication .closepub,
 .transitions.publication .closepub::before {
-	-webkit-transition: all 250ms linear;
-	-moz-transition: all 250ms linear;
-	-ms-transition: all 250ms linear;
-	-o-transition: all 250ms linear;
 	transition: all 250ms linear;
 }
 
@@ -1021,10 +968,6 @@ screen and (min-width: 520px) and (max-width: 699px) {
 	margin: 0;
 	color: #333333;
 	cursor: pointer;
-	-webkit-transition: all 250ms ease;
-	-moz-transition: all 250ms ease;
-	-ms-transition: all 250ms ease;
-	-o-transition: all 250ms ease;
 	transition: all 250ms ease;
 	-webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -1054,10 +997,6 @@ screen and (min-width: 520px) and (max-width: 699px) {
 	opacity: 0;
 	max-width: 0;
 	overflow: hidden;
-	-webkit-transition: all 100ms linear;
-	-moz-transition: all 100ms linear;
-	-ms-transition: all 100ms linear;
-	-o-transition: all 100ms linear;
 	transition: all 100ms linear;
 }
 
@@ -1094,10 +1033,6 @@ screen and (min-width: 520px) and (max-width: 699px) {
 	overflow: hidden;
 	display: block;
 	max-height: 1em;
-	-webkit-transition: max-height 250ms ease;
-	-moz-transition: max-height 250ms ease;
-	-ms-transition: max-height 250ms ease;
-	-o-transition: max-height 250ms ease;
 	transition: max-height 250ms ease;
 }
 
@@ -1125,26 +1060,18 @@ screen and (min-width: 520px) and (max-width: 699px) {
 }
 
 .main>div>h1.transitions, .main>.navbar.transitions {
-	-webkit-transition: max-height 250ms ease, font-size 250ms ease, padding 250ms ease;
-	-moz-transition: max-height 250ms ease, font-size 250ms ease, padding 250ms ease;
-	-ms-transition: max-height 250ms ease, font-size 250ms ease, padding 250ms ease;
-	-o-transition: max-height 250ms ease, font-size 250ms ease, padding 250ms ease;
-	transition: max-height 250ms ease, font-size 250ms ease, padding 250ms ease;
+	transition: max-height 250ms ease,
+	            font-size 250ms ease,
+	            padding 250ms ease;
 }
 
 .single>div>h1.transitions, .single>.navbar.transitions {
-	-webkit-transition: max-height 150ms ease, font-size 250ms ease, padding 150ms ease;
-	-moz-transition: max-height 150ms ease, font-size 250ms ease, padding 150ms ease;
-	-ms-transition: max-height 150ms ease, font-size 250ms ease, padding 150ms ease;
-	-o-transition: max-height 150ms ease, font-size 250ms ease, padding 150ms ease;
-	transition: max-height 150ms ease, font-size 250ms ease, padding 150ms ease;
+	transition: max-height 150ms ease,
+	            font-size 250ms ease,
+	            padding 150ms ease;
 }
 
 .navbar.transitions select, .navbar.transitions .select-wrapper {
-	-webkit-transition: all 100ms ease;
-	-moz-transition: all 100ms ease;
-	-ms-transition: all 100ms ease;
-	-o-transition: all 100ms ease;
 	transition: all 100ms ease;
 }
 
@@ -1162,10 +1089,6 @@ screen and (min-width: 520px) and (max-width: 699px) {
 	max-height: 0;
 	width: 0;
 	overflow: hidden;
-	-webkit-transition: all 100ms linear;
-	-moz-transition: all 100ms linear;
-	-ms-transition: all 100ms linear;
-	-o-transition: all 100ms linear;
 	transition: all 100ms linear;
 	transition-delay: 250ms;
 	z-index: 10;
