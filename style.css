@@ -244,7 +244,7 @@ h2 {
 	content: " Filters …";
 }
 
-.navbar.filters-active .filter-button::after {
+.filters-active .navbar .filter-button::after {
 	content: " Close Filters";
 }
 
@@ -360,12 +360,12 @@ h2 {
 	display: none;  /* hidden unless js enabled */
 }
 
-.navbar.filters-active .filter-button {
+.filters-active .navbar .filter-button {
 	background: #ededed;
 	color: #333333;
 }
 
-.main>.navbar.filters-active {
+.main.filters-active > .navbar {
 	max-height: 151px;
 }
 
@@ -373,7 +373,7 @@ h2 {
 	transition: background 0ms linear 250ms;
 }
 
-.navbar.filters-active .filter-selects {
+.filters-active .navbar .filter-selects {
 	background: #ededed;
 	transition: background 0ms linear;
 }
@@ -437,11 +437,11 @@ h2 {
 	}
 
 	.navbar .filter-button::after,
-	.navbar.filters-active .filter-button::after {
+	.filters-active .navbar .filter-button::after {
 		content: "";
 	}
 
-	.main>.navbar.filters-active {
+	.main.filters-active > .navbar {
 		max-height: 100px;
 	}
 
@@ -493,7 +493,7 @@ h2 {
 		right: 7px;
 	}
 
-	.main>.navbar.filters-active {
+	.main.filters-active > .navbar {
 		max-height: 80px;
 	}
 }
@@ -503,7 +503,7 @@ h2 {
 		max-height: 81px;
 	}
 
-	.main>.navbar.filters-active {
+	.main.filters-active > .navbar {
 		max-height: 121px;
 	}
 }
@@ -515,19 +515,7 @@ h2 {
 	max-height: 100%;
 }
 
-.publication.transitions,
-.talk.transitions {
-	max-height: 9999px;
-	transition: max-height 250ms cubic-bezier(.99,.01,.99,.01);
-}
-
-.publication.transitions.collapsed.filter-open {
-	transition: max-height 250ms ease-out,
-	            min-height 250ms ease-out,
-	            background 250ms linear;
-}
-
-.publication h2, .publication>p, .publication div {
+.publication h2, .publication > p, .publication div {
 	padding-left: 50px;
 	padding-right: 50px;
 }
@@ -544,28 +532,28 @@ h2 {
 	top: 0;
 }
 
-.collapsed h2>a, .collapsed h2>span {
+.collapsed h2 > a, .collapsed h2 > span {
 	display: none;
 }
 
-h2>span {
+h2 > span {
 	font-family: "FontAwesome";
 	color: #8c1515;
 	opacity: 0;
 	transition: opacity 250ms linear;
 }
 
-h2:hover>span {
+h2:hover > span {
 	opacity: 1;
 }
 @media (hover:none), (hover:on-demand) {
-	h2>span {
+	h2 > span {
 		opacity: 1;
 	}
 }
 
 
-h2>a {
+h2 > a {
 	margin: 0;
 	position: absolute;
 	top: 0;
@@ -584,7 +572,7 @@ h2>a {
 	font-size: 1.1em;
 }
 
-.talk>p {
+.talk > p {
 	margin: 0 25px;
 	font-size: 80%;
 }
@@ -594,7 +582,7 @@ h2>a {
 	font-size: .9em;
 }
 
-.publication>p {
+.publication > p {
 	margin-top: 1em;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -670,18 +658,29 @@ h2>a {
 		padding: 10px 0 10px 5px;
 	}
 
-	.publication h2, .publication>p, .publication div {
+	.publication h2, .publication > p, .publication div {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
 }
 
+.publication.transitions,
+.talk.transitions {
+	max-height: 9999px;
+	transition: max-height 250ms cubic-bezier(.99,.01,.99,.01);
+}
+
+.filters-active .publication.transitions.collapsed.filter-open {
+	transition: max-height 250ms ease-out,
+	            min-height 250ms ease-out;
+}
+
 /* For collapsed state with JS */
 .transitions.publication.collapsed,
 .transitions.publication.filtered-out,
-.transitions.talk.filtered-out {
-	transition: max-height 250ms cubic-bezier(.01,.99,.01,.99),
-	            background 250ms linear;
+.transitions.talk.filtered-out,
+.filters-active .publication.transitions.collapsed.filter-open.collapsing {
+	transition: max-height 250ms cubic-bezier(.01,.99,.01,.99);
 }
 
 .publication.collapsed {
@@ -733,8 +732,8 @@ h2>a {
 	font-size: 1.1em;
 }
 
-.collapsed.publication>p {
-	margin: 0 10px 0 95px;
+.collapsed.publication > p {
+	margin: 0 10px -100px 95px;
 	top: -130px;
 	max-height: 50px;
 	overflow: hidden;
@@ -749,7 +748,7 @@ h2>a {
 }
 
 .collapsed.publication h2,
-.collapsed.publication>p {
+.collapsed.publication > p {
 	padding-left: 20px;
 	padding-right: 20px;
 }
@@ -779,8 +778,8 @@ screen and (min-width: 520px) and (max-width: 699px) {
 		z-index: 2;
 	}
 
-	.collapsed.publication>p {
-		margin: 0 10px 0 210px;
+	.collapsed.publication > p {
+		margin: 0 10px -200px 210px;
 		top: -230px;
 		max-height: 135px;
 	}
@@ -806,7 +805,7 @@ screen and (min-width: 520px) and (max-width: 699px) {
 }*/
 
 .transitions h2,
-.transitions.publication>p {
+.transitions.publication > p {
 	transition: all 250ms ease;
 }
 
@@ -1043,14 +1042,14 @@ screen and (min-width: 520px) and (max-width: 699px) {
 }
 
 /* for viewing a single element */
-.main>div>h1 {
+.main > div > h1 {
 	max-height: 3em;
 }
 
-.single>div>h1,
-.single>div>div:not(.selected),
-.single>.navbar,
-.single>.navbar.filters-active {
+.single > div > h1,
+.single > div > div:not(.selected),
+.single > .navbar,
+.single.filters-active > div.navbar {
 	min-height: 0;
 	max-height: 0;
 	margin-bottom: 0;
@@ -1059,13 +1058,13 @@ screen and (min-width: 520px) and (max-width: 699px) {
 	border-bottom: 0;
 }
 
-.main>div>h1.transitions, .main>.navbar.transitions {
+.main > div > h1.transitions, .main > .navbar.transitions {
 	transition: max-height 250ms ease,
 	            font-size 250ms ease,
 	            padding 250ms ease;
 }
 
-.single>div>h1.transitions, .single>.navbar.transitions {
+.single > div > h1.transitions, .single > .navbar.transitions {
 	transition: max-height 150ms ease,
 	            font-size 250ms ease,
 	            padding 150ms ease;

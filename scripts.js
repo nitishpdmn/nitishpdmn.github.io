@@ -210,6 +210,10 @@ scripts = function() {
 		closepub.onclick = function(evt) {
 			if (!this.parentElement.parentElement.classList.contains("collapsed")) {
 				this.parentElement.parentElement.classList.add("collapsed");
+				this.parentElement.parentElement.classList.add("collapsing");
+				setTimeout(function() {
+					closepub.parentElement.parentElement.classList.remove("collapsing");
+				}, 250);
 				if (ths.secCount[secID] === 0) {
 					ths.secExpander[secID].onclick = ths.expandAll(secID);
 				}
@@ -246,6 +250,12 @@ scripts = function() {
 			var ps = this.parentElement.getElementsByClassName("publication");
 			for (var i = ps.length - 1; i >= 0; i--) {
 				ps[i].classList.add("collapsed");
+				ps[i].classList.add("collapsing");
+
+				var psI = ps[i];
+				setTimeout(function() {
+					psI.classList.remove("collapsing");
+				}, 250);
 			}
 			// once collapsed, replace self with the expand onclick
 			this.onclick = ths.expandAll(secID);
@@ -477,19 +487,21 @@ scripts = function() {
 		}
 	};
 	ths.toggleFiltering = function(forcedState) {
-		var filtersActive = ths.navbar.classList.contains("filters-active");
+		var main = document.getElementsByClassName("main")[0];
+
+		var filtersActive = main.classList.contains("filters-active");
 		var stateForced = typeof forcedState == 'boolean';
 		if (stateForced) {
 			filtersActive = !forcedState;
 		}
 
 		if (filtersActive) {
-			ths.navbar.classList.remove("filters-active");
+			main.classList.remove("filters-active");
 			ths.filterChooser.selectedIndex = 0;
 			ths.updateFilterType();
 			ths.updateFilterUrl();
 		} else {
-			ths.navbar.classList.add("filters-active");
+			main.classList.add("filters-active");
 			if (stateForced) {
 				var filters = window.location.hash.substring(2).split(",");
 
