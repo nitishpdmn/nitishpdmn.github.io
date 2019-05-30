@@ -813,7 +813,7 @@ screen and (min-width: 520px) and (max-width: 699px) {
 .transitions .imgwrap img {
 	transition: all 250ms ease,
 	            max-width 75ms ease-in,
-	            max-height 150ms ease 75ms;
+	            max-height 175ms ease-out 75ms;
 }
 
 .collapsed.transitions .imgwrap,
