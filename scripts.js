@@ -390,7 +390,7 @@ scripts = function() {
 	// set of filter functions
 	ths.filterYear = function(year, elems) {
 		for (var i = elems.length - 1; i >= 0; i--) {
-			if (!elems[i].getAttribute("data-year").includes(year)) {
+			if (elems[i].getAttribute("data-year").indexOf(year) == -1) {
 				elems[i].classList.add("filtered-out");
 				elems[i].classList.remove("filter-open");
 			}
@@ -421,10 +421,8 @@ scripts = function() {
 	ths.filterFormDict = {};
 	// the function that parses the hash for the filters to apply 
 	ths.filterParser = function(urlHash) {
-		var filterables = Array.from(document.getElementsByClassName("publication")).concat(
-			Array.from(document.getElementsByClassName("talk")));
-		var secTitles = Array.from(document.getElementsByClassName("title")).concat(
-			Array.from(document.getElementsByClassName("expandsec")));
+		var filterables = document.querySelectorAll(".publication, .talk");
+		var secTitles = document.querySelectorAll(".title, .expandsec");
 
 		// clear all filters first, then apply
 		for (var i = filterables.length - 1; i >= 0; i--) {
@@ -518,8 +516,7 @@ scripts = function() {
 		}
 	};
 	ths.initializeFilter = function(attrName, unselectedName, reversedOrder) {
-		var filterables = Array.from(document.getElementsByClassName("publication")).concat(
-			Array.from(document.getElementsByClassName("talk")));
+		var filterables = document.querySelectorAll(".publication, .talk");
 		var targetList = [];
 
 		var opt = document.createElement("option");
@@ -559,8 +556,9 @@ scripts = function() {
 		opt.innerText = "Any";
 		selectForm.appendChild(opt);
 		var optgroup = document.createElement("optgroup");
-		optgroup.label = "–".repeat(unselectedName.length);
 		selectForm.appendChild(optgroup);
+
+		var optMaxLength = 0;
 		for (var i = 0; i < targetList.length; i++) {
 			opt = document.createElement("option");
 			var optText = targetList[i];
@@ -573,8 +571,17 @@ scripts = function() {
 					"(", "").replace(")", "");
 				opt.value = optText;
 			}
+
+			optMaxLength = Math.max(opt.value.length, optMaxLength);
 			selectForm.appendChild(opt);
 		}
+
+		var labelStr = "";
+		for (var i = 0; i < optMaxLength; i++) {
+			labelStr += "–";
+		}
+		optgroup.label = labelStr;
+
 		wrapperDiv.appendChild(selectForm);
 		filterContainer.appendChild(wrapperDiv);
 
