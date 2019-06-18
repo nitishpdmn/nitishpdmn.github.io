@@ -1115,3 +1115,145 @@ screen and (min-width: 520px) and (max-width: 699px) {
 	}
 }
 
+/* for dark mode users */
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #222222;
+		color: #cccccc;
+	}
+
+	::selection {
+		color: #333333;
+	}
+
+	::-moz-selection {
+		color: #333333;
+	}
+
+	.about {
+		background: #333333;
+	}
+
+	.navbar {
+		border-bottom-color: #707070;
+		color: #a0a0a0;
+		background-color: #222222;
+	}
+
+	.navbar li a::before,
+	.navbar .filter-button div,
+	.collapsed.publication::before {
+	    background: rgba(255, 255, 255, 0.12);
+	}
+
+	@media (hover:hover) {
+		.navbar.transitions .dynamic-border {
+			background: #707070;
+		}
+
+		.navbar.transitions .dynamic-border.active {
+			background: #cccccc;
+		}
+	}
+
+	.filters-active .navbar .filter-button {
+		background: #333333;
+		color: #cccccc;
+	}
+
+	.filters-active .navbar .filter-selects {
+		background: #333333;
+	}
+
+	.navbar select {
+		background: #444444;
+	}
+
+	@media screen and (min-width: 700px) {
+		.navbar .filter-selects {
+			background: transparent;
+		}
+
+		.navbar select {
+			background: #333333;
+		}
+	}
+
+	.publication .closepub, .collapsed.publication .imgwrap::before {
+		color: #cccccc;
+	}
+
+
+	@media screen and (min-width: 700px) {
+		.publication .imgwrap[data-bg="light"] .closepub:hover::before {
+			color: #cccccc;
+		}
+
+		@media (hover:none), (hover:on-demand) {
+			.publication .imgwrap[data-bg="light"] .closepub::before {
+				color: #cccccc;
+			}
+		}
+	}
+
+	.section .expandsec::before {
+		background: #ffffff;
+		color: #111111;
+	}
+
+	.copyright span {
+		background: #dddddd;
+		color: #111111;
+	}
+
+	h1, h2 {
+		color: #e0e0e0;
+	}
+
+	.external a.gscholar,
+	.external a.linkedin,
+	.external a.cv {
+		color: #eeeeee;
+	}
+
+	.external a.orcid {
+		background-color: #eeeeee;
+	}
+
+	.navbar li a:link, .navbar li a:visited {
+		color: #a0a0a0;
+	}
+
+	.navbar li a:hover, .navbar .filter-button:hover {
+		color: #cccccc;
+	}
+	@media (hover:none), (hover:on-demand) {
+		.navbar li a:hover, .navbar .filter-button:hover {
+			color: #a0a0a0;
+		}
+	}
+
+	a:link, a:visited, h2 > span {
+		color: #a91919;
+	}
+
+	a:hover {
+		color: #de2121;
+	}
+
+	.publication pre {
+		color: #a0a0a0;
+	}
+
+	.section .expandsec {
+		color: #cccccc;
+	}
+
+	.navbar select {
+		color: #cccccc;
+	}
+
+	.navbar select[disabled] {
+		color: #808080;
+	}
+}
