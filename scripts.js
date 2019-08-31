@@ -403,9 +403,10 @@ scripts = function() {
 			var filterElem = false;
 
 			if (journal.indexOf("(") > -1) {
-				filterElem = elemJournal != journal;
+				console.log(elemJournal + journal);
+				filterElem = elemJournal.indexOf(journal) == -1;
 			} else {
-				filterElem = elemJournal.split("(")[0].trim() != journal;
+				filterElem = elemJournal.split("(")[0].trim().indexOf(journal) == -1;
 			}
 
 			if (filterElem) {
@@ -527,7 +528,7 @@ scripts = function() {
 		for (var i = filterables.length - 1; i >= 0; i--) {
 			var newValList = filterables[i].getAttribute(attrName).split(',');
 			for (var j = newValList.length - 1; j >= 0; j--) {
-				var newVal = newValList[j];
+				var newVal = newValList[j].trim();
 
 				if (targetList.indexOf(newVal) == -1) {
 					targetList.push(newVal);

@@ -121,8 +121,45 @@
         <div class="section" id="sec_publications">
             <h1 class="title">Publications</h1>
 
+            <div class="publication" id="olas" data-year="2019" data-journal="SIGGRAPH Asia">
+                <div class="imgwrap"><img src="pub_ims/lq/olas.png" data-src="pub_ims/[[ratio]]/olas.jpg" data-left="90"></div>
+                <h2>Holographic Near-Eye Displays Based on Overlap-Add Stereograms</h2>
+                <div class="links">
+                    (<a href="https://www.computationalimaging.org/publications/holographic-near-eye-displays-based-on-overlap-add-stereograms-siggraph-asia-2019/">project page</a>,
+                    <a href="#">ACM</a>,
+                    <a href="https://www.computationalimaging.org/wp-content/uploads/2019/08/olas2019.pdf">full text</a>)
+                </div>
+                <p>
+                    Holographic near-eye displays are a key enabling technology for virtual and augmented reality (VR/AR) applications. Holographic stereograms (HS) are a method of encoding a light field into a hologram, which enables them to natively support view-dependent lighting effects. However, existing HS algorithms require the choice of a hogel size, forcing a tradeoff between spatial and angular resolution. Based on the fact that the short-time Fourier transform (STFT) connects a hologram to its observable light field, we develop the overlap-add stereogram (OLAS) as the correct method of &ldquo;inverting&rdquo; the light field into a hologram via the STFT. The OLAS makes more efficient use of the information contained within the light field than previous HS algorithms, exhibiting better image quality at a range of distances and hogel sizes. Most remarkably, the OLAS does not degrade spatial resolution with increasing hogel size, overcoming the spatio-angular resolution tradeoff that previous HS algorithms face. Importantly, the optimal hogel size of previous methods typically varies with the depth of every object in a scene, making the OLAS not only a hogel size&ndash;invariant method, but also nearly scene independent. We demonstrate the performance of the OLAS both in simulation and on a prototype near-eye display system, showing focusing capabilities and view-dependent effects.
+
+
+                </p>
+                <!--googleoff: snippet-->
+                <div class="cite">
+                    <h3>Citation</h3>
+                    <p>
+                        Padmanaban, N., Peng, Y., & Wetzstein, G. (2019). Holographic Near-Eye Displays Based on Overlap-Add Stereograms. <i>ACM SIGGRAPH Asia (Transactions on Graphics), 38</i>(6), 214.
+                    </p>
+                </div>
+                <div class="bibtex">
+                    <h3>BibTeX</h3>
+                    <pre>
+@article{Padmanaban:2019:OLAS,
+    title={Holographic Near-Eye Displays Based on Overlap-Add Stereograms},
+    author={Padmanaban, Nitish and Peng, Yifan and Wetzstein, Gordon},
+    journal={ACM Transactions on Graphics (TOG)},
+    year={2019},
+    volume={38},
+    number={6},
+    pages={214:1--214:13}
+}
+                    </pre>
+                </div>
+                <!--googleon: snippet-->
+            </div>
+
             <div class="publication" id="autofocals" data-year="2019" data-journal="Science Advances">
-                <div class="imgwrap" data-bg="light"><img src="pub_ims/lq/autofocals.png" data-src="pub_ims/[[ratio]]/autofocals.jpg" data-left="173"></div>
+                <div class="imgwrap"><img src="pub_ims/lq/autofocals.png" data-src="pub_ims/[[ratio]]/autofocals.jpg" data-left="173"></div>
                 <h2>Autofocals: Evaluating Gaze-Contingent Eyeglasses for Presbyopes</h2>
                 <div class="links">
                     (<a href="https://www.computationalimaging.org/publications/autofocals-evaluating-gaze-contingent-eyeglasses-for-presbyopes/">project page</a>,
@@ -157,7 +194,7 @@
             </div>
 
             <div class="publication" id="ml_sickness" data-year="2018" data-journal="IEEE (VR/TVCG)">
-                <div class="imgwrap" data-bg="light"><img src="pub_ims/lq/ml_sickness.png" data-src="pub_ims/[[ratio]]/ml_sickness.jpg" data-left="122"></div>
+                <div class="imgwrap"><img src="pub_ims/lq/ml_sickness.png" data-src="pub_ims/[[ratio]]/ml_sickness.jpg" data-left="122"></div>
                 <h2>Towards a Machine-Learning Approach for Sickness Prediction in 360&deg; Stereoscopic Videos</h2>
                 <div class="links">
                     (<a href="https://www.computationalimaging.org/publications/towards-a-machine-learning-approach-for-sickness-prediction-in-360-stereoscopic-videos-ieee-vr-2018/">project page</a>,
@@ -227,43 +264,6 @@
                 <!--googleon: snippet-->
             </div>
 
-            <div class="publication" id="monovision" data-year="2017" data-journal="OSA (3D)">
-                <div class="imgwrap"><img src="pub_ims/lq/monovision.png" data-src="pub_ims/[[ratio]]/monovision.jpg" data-left="245"></div>
-                <h2>Evaluation of Accommodation Responses to Monovision for Virtual Reality</h2>
-                <div class="links">
-                    (<a href="https://www.osapublishing.org/abstract.cfm?uri=3D-2017-DM2F.3">OSA</a>,
-                    <span class="copyright">
-                        <a href="uploads/monovision2017.pdf" rel="nofollow">full text</a><!-- get rid of whitespace in text
-                        --><span>&copy; 2017 Optical Society of America. One print or electronic copy may be made for personal use only. Systematic reproduction and distribution, duplication of any material in this paper for a fee or for commercial purposes, or modifications of the content of this paper are prohibited.</span><!-- get rid of whitespace in text
-                    --></span>)
-                </div>
-                <p>
-                    Emerging virtual and augmented reality (VR/AR) systems can produce highly immersive experiences, but also induce visual discomfort, eyestrain, and nausea for some users. One of the sources of these symptoms is the lack of natural focus cues in all current VR/AR near-eye displays. These displays project stereoscopic image pairs, driving the vergence state of the eyes to arbitrary distances. However, the accommodation, or focus state of the eyes, is optically driven to a fixed distance. In this work, we empirically evalaute monovision: a simple, yet unconventional method for potentially driving the accommodation state of the eyes to two distances by allowing each eye to drive focus to a different distance.  
-                </p>
-                <!--googleoff: snippet-->
-                <div class="cite">
-                    <h3>Citation</h3>
-                    <p>
-                        Padmanaban, N., Konrad, R., & Wetzstein, G. (2017, June). Evaluation of Accommodation Response to Monovision for Virtual Reality. In <i>3D Image Acquisition and Display: Technology, Perception and Applications</i> (pp. DM2F.3). Optical Society of America.
-                    </p>
-                </div>
-                <div class="bibtex">
-                    <h3>BibTeX</h3>
-                    <pre>
-@inproceedings{Padmanaban:2017:Evaluation,
-    title={Evaluation of Accommodation Response to Monovision for Virtual Reality},
-    author={Padmanaban, Nitish and Konrad, Robert and Wetzstein, Gordon},
-    booktitle={3D Image Acquisition and Display: Technology, Perception and Applications},
-    year={2017},
-    month={June},
-    pages={DM2F.3},
-    organization={Optical Society of America}
-}
-                    </pre>
-                </div>
-                <!--googleon: snippet-->
-            </div>
-
             <div class="publication" id="gaze_cont" data-year="2017" data-journal="PNAS">
                 <div class="imgwrap"><img src="pub_ims/lq/gaze.png" data-src="pub_ims/[[ratio]]/gaze.jpg" data-left="198"></div>
                 <h2>Optimizing Virtual Reality for All Users through Gaze-Contingent and Adaptive Focus Displays</h2>
@@ -304,7 +304,7 @@
         <div class="section" id="sec_abstracts">
             <h1 class="title">Abstracts</h1>
             <div class="publication" id="etech_autofocals" data-year="2018" data-journal="SIGGRAPH (E-Tech)">
-                <div class="imgwrap" data-bg="light"><img src="pub_ims/lq/etech_autofocals.png" data-src="pub_ims/[[ratio]]/etech_autofocals.jpg" data-left="70"></div>
+                <div class="imgwrap"><img src="pub_ims/lq/etech_autofocals.png" data-src="pub_ims/[[ratio]]/etech_autofocals.jpg" data-left="70"></div>
                 <h2>Autofocals: Gaze-Contingent Eyeglasses for Presbyopes</h2>
                 <div class="links">
                     (<a href="https://dl.acm.org/citation.cfm?id=3214918">ACM</a>, <a href="#autofocals">full publication</a>)
@@ -330,6 +330,43 @@
     month={August},
     pages={3:1--3:2},
     organization={ACM}
+}
+                    </pre>
+                </div>
+                <!--googleon: snippet-->
+            </div>
+
+            <div class="publication" id="monovision" data-year="2017" data-journal="OSA (3D)">
+                <div class="imgwrap"><img src="pub_ims/lq/monovision.png" data-src="pub_ims/[[ratio]]/monovision.jpg" data-left="245"></div>
+                <h2>Evaluation of Accommodation Responses to Monovision for Virtual Reality</h2>
+                <div class="links">
+                    (<a href="https://www.osapublishing.org/abstract.cfm?uri=3D-2017-DM2F.3">OSA</a>,
+                    <span class="copyright">
+                        <a href="uploads/monovision2017.pdf" rel="nofollow">full text</a><!-- get rid of whitespace in text
+                        --><span>&copy; 2017 Optical Society of America. One print or electronic copy may be made for personal use only. Systematic reproduction and distribution, duplication of any material in this paper for a fee or for commercial purposes, or modifications of the content of this paper are prohibited.</span><!-- get rid of whitespace in text
+                    --></span>)
+                </div>
+                <p>
+                    Emerging virtual and augmented reality (VR/AR) systems can produce highly immersive experiences, but also induce visual discomfort, eyestrain, and nausea for some users. One of the sources of these symptoms is the lack of natural focus cues in all current VR/AR near-eye displays. These displays project stereoscopic image pairs, driving the vergence state of the eyes to arbitrary distances. However, the accommodation, or focus state of the eyes, is optically driven to a fixed distance. In this work, we empirically evalaute monovision: a simple, yet unconventional method for potentially driving the accommodation state of the eyes to two distances by allowing each eye to drive focus to a different distance.  
+                </p>
+                <!--googleoff: snippet-->
+                <div class="cite">
+                    <h3>Citation</h3>
+                    <p>
+                        Padmanaban, N., Konrad, R., & Wetzstein, G. (2017, June). Evaluation of Accommodation Response to Monovision for Virtual Reality. In <i>3D Image Acquisition and Display: Technology, Perception and Applications</i> (pp. DM2F.3). Optical Society of America.
+                    </p>
+                </div>
+                <div class="bibtex">
+                    <h3>BibTeX</h3>
+                    <pre>
+@inproceedings{Padmanaban:2017:Evaluation,
+    title={Evaluation of Accommodation Response to Monovision for Virtual Reality},
+    author={Padmanaban, Nitish and Konrad, Robert and Wetzstein, Gordon},
+    booktitle={3D Image Acquisition and Display: Technology, Perception and Applications},
+    year={2017},
+    month={June},
+    pages={DM2F.3},
+    organization={Optical Society of America}
 }
                     </pre>
                 </div>
@@ -406,9 +443,10 @@
 <!--Start talks here-->
         <div class="basic-section" id="sec_talks">
             <h1 class="title">Presentations</h1>
-            <div class="talk" data-year="2019" data-journal="SIGGRAPH (Talks)">
+            <div class="talk" data-year="2019" data-journal="SIGGRAPH (Talks), OSA (Frontiers in Optics)">
                 <h2>Autofocals: Evaluating Gaze-Contingent Eyeglasses for Presbyopes</h2>
                 <p>ACM SIGGRAPH Talks, August 2019</p>
+                <p>OSA Frontiers in Optics, September 2019</p>
             </div>
             <div class="talk" data-year="2019" data-journal="Samsung Forum">
                 <h2>Autofocal Correction for Presbyopes and Its Application to AR/VR</h2>
@@ -418,7 +456,7 @@
                 <h2>Fundamentals of Virtual- and Augmented-Reality Technologies</h2>
                 <p>SID Display Week Short Courses, May 2019</p>
             </div>
-            <div class="talk" data-year="2018,2019" data-journal="Electronic Imaging">
+            <div class="talk" data-year="2018, 2019" data-journal="Electronic Imaging">
                 <h2>Build Your Own VR Display: An Introduction to VR Display Systems for Hobbyists and Educators</h2>
                 <p>Electronic Imaging Short Courses, January 2018</p>
                 <p>Electronic Imaging Short Courses, January 2019</p>

@@ -536,6 +536,10 @@ h2 {
 	display: none;
 }
 
+.collapsed .cite, .collapsed .bibtex {
+	opacity: 0;
+}
+
 h2 > span {
 	font-family: "FontAwesome";
 	color: #8c1515;
