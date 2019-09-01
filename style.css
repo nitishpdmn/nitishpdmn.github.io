@@ -1238,11 +1238,11 @@ screen and (min-width: 520px) and (max-width: 699px) {
 	}
 
 	a:link, a:visited, h2 > span {
-		color: #a91919;
+		color: #44aadd;
 	}
 
 	a:hover {
-		color: #de2121;
+		color: #88ccee;
 	}
 
 	.publication pre {
