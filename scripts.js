@@ -553,6 +553,7 @@ scripts = function() {
 		wrapperDiv.classList.add("select-wrapper");
 		wrapperDiv.classList.add("inactive-choice");
 		var selectForm = document.createElement("select");
+		selectForm.title = "choose " + unselectedName + " to filter";
 		opt = document.createElement("option");
 		opt.innerText = "Any";
 		selectForm.appendChild(opt);
