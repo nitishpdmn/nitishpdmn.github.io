@@ -25,7 +25,7 @@
     <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://nitish.me/" />
     <meta property="og:image" content="https://nitish.me/site_ims/profile_405.jpg" />
-    <meta name="description" property="og:description" content="I’m a fifth year PhD candidate at Stanford EE advised by Gordon Wetzstein, as part of the Computational Imaging Lab. My research is focused on optical and computational techniques for improving visual perception." />
+    <meta name="description" property="og:description" content="I’m currently working on automatically refocusing reading glasses at Zinn Labs. My research is focused on optical and computational techniques for improving visual perception." />
 
     <script type="application/ld+json">
     {
@@ -35,8 +35,13 @@
         "givenName": "Nitish",
         "familyName": "Padmanaban",
         "image": "https://nitish.me/site_ims/profile_405.jpg",
-        "jobTitle": "PhD Candidate",
+        "jobTitle": "PhD, Electrical Engineering",
         "affiliation": [
+            {
+                "@type": "Corporation",
+                "name": "Zinn Labs",
+                "url": "https://zinnlabs.com/about/"
+            },
             {
                 "@type": "Organization",
                 "name": "Stanford Computational Imaging Lab",
@@ -45,6 +50,13 @@
                     "https://www.facebook.com/Stanford-Computational-Imaging-Lab-400289963641103/",
                     "https://www.youtube.com/channel/UCrjWHhrkZnq4jwqvtrx-jvA/"
                 ]
+            }
+        ],
+        "alumniOf": [
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "University of California, Berkeley",
+                "sameAs": "https://en.wikipedia.org/wiki/University_of_California,_Berkeley"
             },
             {
                 "@type": "CollegeOrUniversity",
@@ -52,15 +64,11 @@
                 "sameAs": "https://en.wikipedia.org/wiki/Stanford_University"
             }
         ],
-        "alumniOf": {
-            "@type": "CollegeOrUniversity",
-            "name": "University of California, Berkeley",
-            "sameAs": "https://en.wikipedia.org/wiki/University_of_California,_Berkeley"
-        },
         "url": "https://nitish.me/",
         "sameAs": [
             "https://www.linkedin.com/in/nitishp/",
             "https://scholar.google.com/citations?user=uiNjnfgAAAAJ&hl=en",
+            "https://www.ted.com/speakers/nitish_padmanaban?language=en",
             "https://orcid.org/0000-0002-1643-7413"
         ]
     }
@@ -74,9 +82,9 @@
         <img alt="profile photo" src="site_ims/profile_lq.jpg" data-src="site_ims/profile_[[270,405,540,600,900,1200,1400]].jpg">
         <div id="info">
             <h1 class="name">Nitish Padmanaban</h1>
-            <div class="job">PhD Candidate, Electrical Engineering</div>
+            <div class="job">PhD, Electrical Engineering</div>
             <div class="email">nit [at] <span class="emailRemove">REMOVETHIS</span>stanford [dot] <span class="emailRemove">REMOVETHIS</span>edu</div>
-            <div class="address">Packard Bldg, Rm 225</div>
+            <!--<div class="address"></div>-->
             <div class="external"><!--
                 --><a href="https://scholar.google.com/citations?user=uiNjnfgAAAAJ&hl=en" title="Google Scholar" alt="Google Scholar" class="acicons ai-google-scholar gscholar"></a><!--
                 --><a href="https://www.linkedin.com/in/nitishp/" title="LinkedIn" alt="LinkedIn" class="fa-linkedin linkedin"></a><!--
@@ -87,13 +95,13 @@
         <div id="bio">
             <h2>About</h2>
             <p>
-                I’m a fifth year PhD candidate at Stanford EE, supported by an <a href="https://nsfgrfp.org/">NSF Graduate Research Fellowship</a>. I’m advised by <a href="https://stanford.edu/~gordonwz/">Prof. Gordon Wetzstein</a> as part of the <a href="https://www.computationalimaging.org/">Stanford Computational Imaging Lab</a>.
+                I’m currently working on automatically refocusing reading glasses at <a href="https://zinnlabs.com/">Zinn Labs</a>.
             </p>
             <p>
                 My research is focused on using optical and computational techniques for improving visual perception in near-eye optical systems. My work includes building and evaluating displays to alleviate the vergence&ndash;accommodation conflict in virtual and augmented reality systems, addressing presbyopia in both physical and virtual settings, and also visual&ndash;vestibular conflicts as they relate to motion sickness in VR.
             </p>
             <p>
-                I received my Master’s from Stanford EE in 2017, and a Bachelor’s in EECS from UC Berkeley in 2015. In my time at Berkeley, my coursework focused on signal processing, and I was an undergraduate researcher in the <a href="https://bisl.berkeley.edu/">Berkeley Imaging Systems Lab</a>.
+                I recently graduated with a PhD from Stanford EE in 2020. While at Stanford, I was advised by <a href="https://stanford.edu/~gordonwz/">Prof. Gordon Wetzstein</a> as part of the <a href="https://www.computationalimaging.org/">Stanford Computational Imaging Lab</a>. Additionally, I was supported by an <a href="https://nsfgrfp.org/">NSF Graduate Research Fellowship</a>. I received a Master’s from Stanford EE in 2017, and a Bachelor’s in EECS from UC Berkeley in 2015. In my time at Berkeley, my coursework focused on signal processing, and I was an undergraduate researcher in the <a href="https://bisl.berkeley.edu/">Berkeley Imaging Systems Lab</a>.
             </p>
         </div>
     </div>
@@ -130,7 +138,7 @@
                     <a href="https://www.computationalimaging.org/wp-content/uploads/2020/02/ieee-vr_factored-occlusion.pdf">full text</a>)
                 </div>
                 <p>
-                    Occlusion is a powerful visual cue that is crucial for depth perception and realism in optical see-through augmented reality (OST-AR). However, existing OST-AR systems additively overlay physical and digital content with beam combiners &ndash; an approach that does not easily support mutual occlusion, resulting in virtual objects that appear semi-transparent and unrealistic. In this work, we propose a new type of occlusion-capable OST-AR system. Rather than additively combining the real and virtual worlds, we employ a single digital micromirror device (DMD) to merge the respective light paths in a multiplicative manner. This unique approach allows us to simultaneously block light incident from the physical scene on a pixel-by-pixel basis while also modulating the light emitted by a light-emitting diode (LED) to display digital content. Our technique builds on mixed binary/continuous factorization algorithms to optimize time-multiplexed binary DMD patterns and their corresponding LED colors to approximate a target augmented reality (AR) scene. In simulations and with a prototype benchtop display, we demonstrate hard-edge occlusions, plausible shadows, and also gaze-contingent optimization of this novel display mode, which only requires a single spatial light modulator.
+                    Occlusion is a powerful visual cue that is crucial for depth perception and realism in optical see-through augmented reality (OST-AR). However, existing OST-AR systems additively overlay physical and digital content with beam combiners&hairsp;&mdash;&hairsp;an approach that does not easily support mutual occlusion, resulting in virtual objects that appear semi-transparent and unrealistic. In this work, we propose a new type of occlusion-capable OST-AR system. Rather than additively combining the real and virtual worlds, we employ a single digital micromirror device (DMD) to merge the respective light paths in a multiplicative manner. This unique approach allows us to simultaneously block light incident from the physical scene on a pixel-by-pixel basis while also modulating the light emitted by a light-emitting diode (LED) to display digital content. Our technique builds on mixed binary/continuous factorization algorithms to optimize time-multiplexed binary DMD patterns and their corresponding LED colors to approximate a target augmented reality (AR) scene. In simulations and with a prototype benchtop display, we demonstrate hard-edge occlusions, plausible shadows, and also gaze-contingent optimization of this novel display mode, which only requires a single spatial light modulator.
                 </p>
                 <!--googleoff: snippet-->
                 <div class="cite">
@@ -237,7 +245,7 @@
                     <a href="https://www.computationalimaging.org/wp-content/uploads/2018/02/ieee-vr_motion-sickness.pdf">full text</a>)
                 </div>
                 <p>
-                    Virtual reality systems are widely believed to be the next major computing platform. There are, however, some barriers to adoption that must be addressed, such as that of motion sickness &ndash; which can lead to undesirable symptoms including postural instability, headaches, and nausea. Motion sickness in virtual reality occurs as a result of moving visual stimuli that cause users to perceive self-motion while they remain stationary in the real world. There are several contributing factors to both this perception of motion and the subsequent onset of sickness, including field of view, motion velocity, and stimulus depth. We verify first that differences in vection due to relative stimulus depth remain correlated with sickness. Then, we build a dataset of stereoscopic 3D videos and their corresponding sickness ratings in order to quantify their nauseogenicity, which we make available for future use. Using this dataset, we train a machine learning algorithm on hand-crafted features (quantifying speed, direction, and depth as functions of time) from each video, learning the contributions of these various features to the sickness ratings. Our predictor generally outperforms a na&iuml;ve estimate, but is ultimately limited by the size of the dataset. However, our result is promising and opens the door to future work with more extensive datasets. This and further advances in this space have the potential to alleviate developer and end user concerns about motion sickness in the increasingly commonplace virtual world.
+                    Virtual reality systems are widely believed to be the next major computing platform. There are, however, some barriers to adoption that must be addressed, such as that of motion sickness&hairsp;&mdash;&hairsp;which can lead to undesirable symptoms including postural instability, headaches, and nausea. Motion sickness in virtual reality occurs as a result of moving visual stimuli that cause users to perceive self-motion while they remain stationary in the real world. There are several contributing factors to both this perception of motion and the subsequent onset of sickness, including field of view, motion velocity, and stimulus depth. We verify first that differences in vection due to relative stimulus depth remain correlated with sickness. Then, we build a dataset of stereoscopic 3D videos and their corresponding sickness ratings in order to quantify their nauseogenicity, which we make available for future use. Using this dataset, we train a machine learning algorithm on hand-crafted features (quantifying speed, direction, and depth as functions of time) from each video, learning the contributions of these various features to the sickness ratings. Our predictor generally outperforms a na&iuml;ve estimate, but is ultimately limited by the size of the dataset. However, our result is promising and opens the door to future work with more extensive datasets. This and further advances in this space have the potential to alleviate developer and end user concerns about motion sickness in the increasingly commonplace virtual world.
                 </p>
                 <!--googleoff: snippet-->
                 <div class="cite">
@@ -481,6 +489,7 @@
             <div class="talk" data-year="2019" data-journal="TEDx">
                 <h2>Automatically Refocusing Reading Glasses</h2>
                 <p><a href="https://www.youtube.com/watch?v=iAknMPnn_V8">TEDx Beacon Street, November 2019</a></p>
+                <p><a href="https://www.ted.com/talks/nitish_padmanaban_autofocusing_reading_glasses_of_the_future">Autofocusing reading glasses of the future, (posted on TED)</p>
             </div>
             <div class="talk" data-year="2019" data-journal="SIGGRAPH (Talks), OSA (Frontiers in Optics)">
                 <h2>Autofocals: Evaluating Gaze-Contingent Eyeglasses for Presbyopes</h2>
