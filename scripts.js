@@ -403,10 +403,13 @@ scripts = function() {
 			var filterElem = false;
 
 			if (journal.indexOf("(") > -1) {
-				console.log(elemJournal + journal);
 				filterElem = elemJournal.indexOf(journal) == -1;
 			} else {
-				filterElem = elemJournal.split("(")[0].trim().indexOf(journal) == -1;
+				var elemJournals = elemJournal.split(",");
+				filterElem = true;
+				for (var j = elemJournals.length - 1; j >= 0; j--) {
+					filterElem = filterElem && (elemJournals[j].split("(")[0].trim().indexOf(journal) == -1);
+				}
 			}
 
 			if (filterElem) {
