@@ -129,6 +129,41 @@
         <div class="section" id="sec_publications">
             <h1 class="title">Publications</h1>
 
+            <div class="publication" id="neural_holo" data-year="2020" data-journal="SIGGRAPH Asia">
+                <div class="imgwrap"><img alt="neural_holo display image" src="pub_ims/lq/neural_holo.png" data-src="pub_ims/[[ratio]]/neural_holo.jpg" data-left="204"></div>
+                <h2>Neural Holography with Camera-in-the-Loop Training</h2>
+                <div class="links">
+                    (<a href="https://www.computationalimaging.org/publications/neuralholography/">project page</a>,
+                    <a href="#">ACM</a>,
+                    <a href="http://www.computationalimaging.org/wp-content/uploads/2020/08/NeuralHolography_SIGAsia2020.pdf">full text</a>)
+                </div>
+                <p>
+                    Holographic displays promise unprecedented capabilities for direct-view displays as well as virtual and augmented reality applications. However, one of the biggest challenges for computer-generated holography (CGH) is the fundamental tradeoff between algorithm runtime and achieved image quality, which has prevented high-quality holographic image synthesis at fast speeds. Moreover, the image quality achieved by most holographic displays is low, due to the mismatch between the optical wave propagation of the display and its simulated model. Here, we develop an algorithmic CGH framework that achieves unprecedented image fidelity and real-time framerates. Our framework comprises several parts, including a novel camera-in-the-loop optimization strategy that allows us to either optimize a hologram directly or train an interpretable model of the optical wave propagation and a neural network architecture that represents the first CGH algorithm capable of generating full-color high-quality holographic images at 1080p resolution in real time.
+                </p>
+                <!--googleoff: snippet-->
+                <div class="cite">
+                    <h3>Citation</h3>
+                    <p>
+                        Peng, Y., Choi, S., Padmanaban, N., & Wetzstein, G. (2020). Neural Holography with Camera-in-the-Loop Training. <i>ACM SIGGRAPH Asia (Transactions on Graphics), 39</i>(6), 1.
+                    </p>
+                </div>
+                <div class="bibtex">
+                    <h3>BibTeX</h3>
+                    <pre>
+@article{Peng:2020:Neural,
+    title={Neural Holography with Camera-in-the-Loop Training},
+    author={Peng, Yifan and Choi, Suyeon and Padmanaban, Nitish and Wetzstein, Gordon},
+    journal={ACM Transactions on Graphics (TOG)},
+    year={2020},
+    volume={39},
+    number={6},
+    pages={1:1--1:14}
+}
+                    </pre>
+                </div>
+                <!--googleon: snippet-->
+            </div>
+
             <div class="publication" id="occlusion" data-year="2020" data-journal="IEEE (VR/TVCG)">
                 <div class="imgwrap"><img alt="occlusion display image" src="pub_ims/lq/occlusion.png" data-src="pub_ims/[[ratio]]/occlusion.jpg" data-left="0"></div>
                 <h2>Factored Occlusion: Single Spatial Light Modulator Occlusion-Capable Optical See-Through Augmented Reality Display</h2>
@@ -155,9 +190,9 @@
     author={Krajancich, Brooke and Padmanaban, Nitish and Wetzstein, Gordon},
     journal={IEEE Transactions on Visualization and Computer Graphics},
     year={2020},
-    volume={??},
-    number={?},
-    pages={??}
+    volume={26},
+    number={5},
+    pages={1871--1879}
 }
                     </pre>
                 </div>
@@ -174,8 +209,6 @@
                 </div>
                 <p>
                     Holographic near-eye displays are a key enabling technology for virtual and augmented reality (VR/AR) applications. Holographic stereograms (HS) are a method of encoding a light field into a hologram, which enables them to natively support view-dependent lighting effects. However, existing HS algorithms require the choice of a hogel size, forcing a tradeoff between spatial and angular resolution. Based on the fact that the short-time Fourier transform (STFT) connects a hologram to its observable light field, we develop the overlap-add stereogram (OLAS) as the correct method of &ldquo;inverting&rdquo; the light field into a hologram via the STFT. The OLAS makes more efficient use of the information contained within the light field than previous HS algorithms, exhibiting better image quality at a range of distances and hogel sizes. Most remarkably, the OLAS does not degrade spatial resolution with increasing hogel size, overcoming the spatio-angular resolution tradeoff that previous HS algorithms face. Importantly, the optimal hogel size of previous methods typically varies with the depth of every object in a scene, making the OLAS not only a hogel size&ndash;invariant method, but also nearly scene independent. We demonstrate the performance of the OLAS both in simulation and on a prototype near-eye display system, showing focusing capabilities and view-dependent effects.
-
-
                 </p>
                 <!--googleoff: snippet-->
                 <div class="cite">
