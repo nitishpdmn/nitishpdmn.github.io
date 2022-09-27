@@ -739,7 +739,7 @@ h2 > a {
 .collapsed.publication > p {
 	margin: 0 10px -100px 95px;
 	top: -130px;
-	max-height: 50px;
+	max-height: 52px;
 	overflow: hidden;
 }
 
@@ -747,7 +747,7 @@ h2 > a {
 	content: "\2026";
 	display: block;
 	position: absolute;
-	bottom: 5px;
+	bottom: 3px;
 	left: 58%;
 }
 
@@ -785,11 +785,11 @@ screen and (min-width: 520px) and (max-width: 699px) {
 	.collapsed.publication > p {
 		margin: 0 10px -200px 210px;
 		top: -230px;
-		max-height: 135px;
+		max-height: 145px;
 	}
 
 	.collapsed.publication::after {
-		bottom: 5px;
+		bottom: 7px;
 		left: 63%;
 	}
 }
