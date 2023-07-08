@@ -143,7 +143,7 @@ scripts = function() {
 				// light background detected
 				let lightness = (pxVal.data[0] + pxVal.data[1] + pxVal.data[2]) / 3;
 				if (lightness > 127) {
-					img.parentElement.setAttribute("data-bg", "light");	
+					img.parentElement.dataset.bg = "light";
 				}
 			});
 		}
@@ -181,7 +181,7 @@ scripts = function() {
 		var imgs = document.getElementsByTagName("img");
 		var delayedIms = [];
 		for (i = imgs.length - 1; i >= 0; i--) {
-			if (imgs[i].getAttribute("data-src")) {
+			if (imgs[i].dataset.src) {
 				if (!singleArticle ||
 						imgs[i].parentElement.classList.contains("about")) {
 					delayedIms.push(imgs[i]);
@@ -267,7 +267,7 @@ scripts = function() {
 	};
 
 	ths.loadImage = function(img, nextList) {
-		if (!img || img.hasAttribute("data-loaded")) {
+		if (!img || "loaded" in img.dataset) {
 			if (nextList) {
 				let nextIm = nextList.pop();
 				if (nextIm) {
@@ -277,7 +277,7 @@ scripts = function() {
 			return;
 		}
 
-		var newImgUrl = img.getAttribute("data-src").replace(
+		var newImgUrl = img.dataset.src.replace(
 			"[[ratio]]", ths.resourceRatio);
 		// pick closest resolution of the options
 		var startWidthOpts = newImgUrl.indexOf("[[");
@@ -305,7 +305,7 @@ scripts = function() {
 		// load the image in js so we can trigger event
 		img.addEventListener("load", function() {
 			img.parentElement.classList.remove("loading");
-			img.setAttribute("data-loaded", "");
+			img.dataset.loaded = "";
 
 			if (!timeoutFired && nextList) {
 				// disable the timeout for next image
@@ -352,7 +352,7 @@ scripts = function() {
 			var imgs = selected.getElementsByTagName("img");
 			var delayedIms = [];
 			for (var i = imgs.length - 1; i >= 0; i--) {
-				if (imgs[i].getAttribute("data-src") && !imgs[i].hasAttribute("data-loaded")) {
+				if (imgs[i].dataset.src && !("loaded" in imgs[i].dataset)) {
 					delayedIms.push(imgs[i]);
 				}
 			}
@@ -372,7 +372,7 @@ scripts = function() {
 		var imgs = document.getElementsByTagName("img");
 		var delayedIms = [];
 		for (var i = imgs.length - 1; i >= 0; i--) {
-			if (imgs[i].getAttribute("data-src") && !imgs[i].hasAttribute("data-loaded")) {
+			if (imgs[i].dataset.src && !("loaded" in imgs[i].dataset)) {
 				delayedIms.push(imgs[i]);
 			}
 		}
@@ -390,7 +390,7 @@ scripts = function() {
 	// set of filter functions
 	ths.filterYear = function(year, elems) {
 		for (var i = elems.length - 1; i >= 0; i--) {
-			if (elems[i].getAttribute("data-year").indexOf(year) == -1) {
+			if (elems[i].dataset.year.indexOf(year) == -1) {
 				elems[i].classList.add("filtered-out");
 				elems[i].classList.remove("filter-open");
 			}
@@ -399,7 +399,7 @@ scripts = function() {
 	ths.filterJournal = function(journal, elems) {
 		journal = decodeURIComponent(journal);
 		for (var i = elems.length - 1; i >= 0; i--) {
-			var elemJournal = elems[i].getAttribute("data-journal");
+			var elemJournal = elems[i].dataset.journal;
 			var filterElem = false;
 
 			if (journal.indexOf("(") > -1) {
